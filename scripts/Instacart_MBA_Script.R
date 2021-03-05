@@ -2,15 +2,14 @@
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(arules)
 library(cowplot)
 library(scales)
 library(arules)
 library(arulesViz)
 
 #Reading in data
-aisle <- read.csv("data/aisles.csv")
-department <- read.csv("data/departments.csv")
+aisles <- read.csv("data/aisles.csv")
+departments <- read.csv("data/departments.csv")
 products_prior <- read.csv("data/order_products__prior.csv")
 products_train <- read.csv("data/order_products__train.csv")
 orders <- read.csv("data/orders.csv")
@@ -29,7 +28,7 @@ glimpse(products) #product level data
 aisles <- aisles %>% 
             mutate(aisle = as.factor(aisle))
 
-department <-  department %>% 
+departments <-  departments %>% 
                 mutate(department = as.factor(department))
 
 orders <-  orders %>% 
